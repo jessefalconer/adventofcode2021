@@ -1,3 +1,3 @@
-measurements = File.foreach("input.txt").map { |line| line.to_i }.each_cons(3).map { |e| e.inject :+ }
+measurements = File.foreach("input.txt").map(&:to_i).each_cons(3).map(&:sum)
 
-puts measurements[1..measurements.size-1].zip(measurements[0..-2]).flat_map { |x| x.reduce :- }.count(&:positive?)
+puts measurements.each_cons(2).count { |x| x[1] > x[0] }
