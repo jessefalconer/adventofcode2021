@@ -10,7 +10,7 @@ draws.each do |draw|
     arr = board.each_slice(5).to_a
 
     (arr + arr.transpose).each do |row|
-      abort "#{arr.flatten.map(&:to_i).sum * draw.to_i}" if row.all?(nil)
+      abort "#{arr.flat_map(&:to_i).sum * draw.to_i}" if row.all?(nil)
     end
   end
 end

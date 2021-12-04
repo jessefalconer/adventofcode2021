@@ -14,7 +14,7 @@ draws.each do |draw|
 
     (arr + arr.transpose).each do |row|
       if row.all?(nil)
-        break queue[index] = board.flatten.map(&:to_i).sum * draw.to_i
+        break queue[index] = board.flat_map(&:to_i).sum * draw.to_i
       end
     end
   end
