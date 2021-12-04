@@ -4,7 +4,7 @@ boards = File.read("day4/input.txt").split(/\n{2,}/)[1..].map(&:split)
 def board_won?(board, draw)
   arr = board.each_slice(5).to_a
 
-  (arr + arr.transpose).any? { |row| row.all?(nil) }
+  (arr + arr.transpose).any? { |row| row.none? }
 end
 
 draws.each do |draw|

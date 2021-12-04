@@ -5,7 +5,7 @@ queue = {}
 def board_won?(board, draw)
   arr = board.each_slice(5).to_a
 
-  (arr + arr.transpose).any? { |row| row.all?(nil) }
+  (arr + arr.transpose).any? { |row| row.none? }
 end
 
 draws.each do |draw|
