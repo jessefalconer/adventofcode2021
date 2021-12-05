@@ -9,6 +9,8 @@ def board_won?(board, draw)
 end
 
 draws.each do |draw|
+  break if boards.size == queue.size
+
   boards.each_with_index do |board, index|
     next if queue.keys.include? index
 
