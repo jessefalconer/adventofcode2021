@@ -1,5 +1,8 @@
-vectors = File.foreach("day5/input.txt").map { |row| row.gsub("\n", "").split(" -> ").map { _1.split(",").map(&:to_i) } }
 intersections = []
+vectors = File.foreach("day5/input.txt")
+              .map { |row| row.gsub("\n", "")
+                              .split(" -> ")
+                              .map { _1.split(",").map(&:to_i) } }
 
 def create_points(vector)
   x1, x2 = vector.collect { _1[0] }.sort
